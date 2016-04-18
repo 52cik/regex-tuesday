@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>正则周二挑战赛 - 第一周</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>正则周二挑战赛 - 第一周</h1>
+    <nav>
+      <a href="./">&laquo; 查看所有挑战</a>
+    </nav>
+  </header>
+
+  <section>
+    <blockquote>
+    <p>
+      <span title="This weeks Regex Tuesday challenge, the first challenge, is to make a regex which finds and highlights repeated words in a body of text.">
+        本周正则周二挑战是第一个挑战，任务是处理重复的单词。
+      </span>
+      <span title="It is a fairly easy challenge, and future challenges will usually be trickier.">
+        这是个非常简单的挑战，今后的挑战也许会比这个难些。
+      </span>
+    </p>
+    <p>
+      <span title="You should just wrap the repeated word in a &lt;strong&gt; element.">
+        你必须匹配替换重复的单词将它用 <code>&lt;strong&gt;</code> 元素包裹。
+      </span>
+      <span title="For example, 'this is is a test' should be turned into 'this is &lt;strong&gt;<strong>is</strong>&lt;/strong&gt; a test'.">
+        例如：<code>this is is a test</code> 应该被替换为 <code>this is &lt;strong&gt;<strong>is</strong>&lt;/strong&gt; a test</code>。
+      </span>
+    </p>
+    </blockquote>
+
+    <blockquote>在你输入正则之后，每个测试用例都会标注为是否通过，红色是未通过，绿色是通过，因为是基于 web 的，所以只能基于 JavaScript 传统型 NFA (Traditional NFA)正则引擎。它类似于PCRE，但有一些不同之处。</blockquote>
+
+    <p>
+      <input type="text" id="find" placeholder="/正则? 写这里./i">
+      <input type="text" id="replace" placeholder="替换字符">
+    </p>
+
+    <h3>测试用例 (<span id='passed-count'>0</span>/11) <a id='permalink' class='button' href='./challenge1.html'>永久链接 (分享连接)</a> <label id="hide_passing"><input type="checkbox"> 隐藏通过的例子</label></h3>
+    <dl id='tests'>
+      <dt>This is a test</dt><dd>This is a test</dd>
+      <dt>This is is a test</dt><dd>This is &lt;strong&gt;is&lt;/strong&gt; a test</dd>
+      <dt>This test test is is</dt><dd>This test &lt;strong&gt;test&lt;/strong&gt; is &lt;strong&gt;is&lt;/strong&gt;</dd>
+      <dt>This test is a test</dt><dd>This test is a test</dd>
+      <dt>This this test is a test</dt><dd>This &lt;strong&gt;this&lt;/strong&gt; test is a test</dd>
+      <dt>cat dog dog cat dog</dt><dd>cat dog &lt;strong&gt;dog&lt;/strong&gt; cat dog</dd>
+      <dt>This test is a test tester</dt><dd>This test is a test tester</dd>
+      <dt>hello world hello world</dt><dd>hello world hello world</dd>
+      <dt>This nottest test is something</dt><dd>This nottest test is something</dd>
+      <dt>This is IS a test</dt><dd>This is &lt;strong&gt;IS&lt;/strong&gt; a test</dd>
+      <dt>&lt;Mack&gt; I'll I'll be be back back in in a a bit bit.</dt><dd>&lt;Mack&gt; I'll &lt;strong&gt;I'll&lt;/strong&gt; be &lt;strong&gt;be&lt;/strong&gt; back &lt;strong&gt;back&lt;/strong&gt; in &lt;strong&gt;in&lt;/strong&gt; a &lt;strong&gt;a&lt;/strong&gt; bit &lt;strong&gt;bit&lt;/strong&gt;.</dd>
+    </dl>
+    <div id="congratulations">
+        恭喜，你的正则通过了所有测试用例，记住要分享这个挑战哦。
+    </div>
+  </section>
+
+  <script src="assets/challenge.js"></script>
+</body>
+</html>
