@@ -1,179 +1,136 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Regex Challenge - Week Fourteen</title>
-
-	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet'>
-	<link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8">
+  <title>正则周二挑战赛 - 第十四周</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-	<header>
-		<h1>Regex Tuesday Challenge - Week Fourteen</h1>
+  <header>
+    <h1>正则周二挑战赛 - 第十四周</h1>
+    <nav>
+      <a href="./">&laquo; 查看所有挑战</a>
+    </nav>
+  </header>
 
-		<nav>
-			<a href="./">&laquo; View all Challenges</a>
-		</nav>
+  <section>
+    <p>This challenge, suggested by <a href="http://www.reddit.com/user/a-t-k">/u/a-t-k</a>, is to match all the valid chemical element short names (eg. H and Ag) of elements <strong>with an atomic number of 50 or less</strong>. This is golf; the aim is to create the shortest regular expression possible. You should match the chemical formulas, and nothing else.</p>
+    <p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
 
-		<div id='social'>
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="callumacrae" data-hashtags="regextuesday">Tweet</a>
-			<div class="g-plusone" data-size="medium"></div>
-			<div class="fb-like" data-send="false" data-layout="button_count" data-width="75" data-show-faces="false" style="top: -4px"></div>
-			<div style='display: inline-block; position: relative; margin-left: 30px; top: 3px;'>
-				<script type="text/javascript" src="//pay.reddit.com/static/button/button1.js"></script>
-			</div>
-		</div>
-	</header>
+    <p class='single-input'>
+      <textarea id="find" placeholder="/正则? 写这里../i"></textarea>
+    </p>
 
-	<section>
-		<p>This challenge, suggested by <a href="http://www.reddit.com/user/a-t-k">/u/a-t-k</a>, is to match all the valid chemical element short names (eg. H and Ag) of elements <strong>with an atomic number of 50 or less</strong>. This is golf; the aim is to create the shortest regular expression possible. You should match the chemical formulas, and nothing else.</p>
-		<p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
+    <h3>测试用例 (<span id='passed-count'>0</span>/101) <a id='permalink' class='button' href='./challenge14.html'>永久链接 (分享连接)</a> <label id="hide_passing"><input type="checkbox"> 隐藏通过的条目</label></h3>
+    <dl id='tests'>
+      <dt>H</dt><dd>匹配</dd>
+      <dt>He</dt><dd>匹配</dd>
+      <dt>Li</dt><dd>匹配</dd>
+      <dt>Be</dt><dd>匹配</dd>
+      <dt>B</dt><dd>匹配</dd>
+      <dt>C</dt><dd>匹配</dd>
+      <dt>N</dt><dd>匹配</dd>
+      <dt>O</dt><dd>匹配</dd>
+      <dt>F</dt><dd>匹配</dd>
+      <dt>Ne</dt><dd>匹配</dd>
+      <dt>Na</dt><dd>匹配</dd>
+      <dt>Mg</dt><dd>匹配</dd>
+      <dt>Ni</dt><dd>匹配</dd>
+      <dt>Si</dt><dd>匹配</dd>
+      <dt>P</dt><dd>匹配</dd>
+      <dt>S</dt><dd>匹配</dd>
+      <dt>Cl</dt><dd>匹配</dd>
+      <dt>Ar</dt><dd>匹配</dd>
+      <dt>K</dt><dd>匹配</dd>
+      <dt>Ca</dt><dd>匹配</dd>
+      <dt>Sc</dt><dd>匹配</dd>
+      <dt>Ti</dt><dd>匹配</dd>
+      <dt>V</dt><dd>匹配</dd>
+      <dt>Cr</dt><dd>匹配</dd>
+      <dt>Mn</dt><dd>匹配</dd>
+      <dt>Fe</dt><dd>匹配</dd>
+      <dt>Co</dt><dd>匹配</dd>
+      <dt>Ni</dt><dd>匹配</dd>
+      <dt>Cu</dt><dd>匹配</dd>
+      <dt>Zn</dt><dd>匹配</dd>
+      <dt>Ga</dt><dd>匹配</dd>
+      <dt>Ge</dt><dd>匹配</dd>
+      <dt>As</dt><dd>匹配</dd>
+      <dt>Se</dt><dd>匹配</dd>
+      <dt>Br</dt><dd>匹配</dd>
+      <dt>Kr</dt><dd>匹配</dd>
+      <dt>Rb</dt><dd>匹配</dd>
+      <dt>Sr</dt><dd>匹配</dd>
+      <dt>Y</dt><dd>匹配</dd>
+      <dt>Zr</dt><dd>匹配</dd>
+      <dt>Nb</dt><dd>匹配</dd>
+      <dt>Mo</dt><dd>匹配</dd>
+      <dt>Tc</dt><dd>匹配</dd>
+      <dt>Ru</dt><dd>匹配</dd>
+      <dt>Rh</dt><dd>匹配</dd>
+      <dt>Pd</dt><dd>匹配</dd>
+      <dt>Ag</dt><dd>匹配</dd>
+      <dt>Cd</dt><dd>匹配</dd>
+      <dt>In</dt><dd>匹配</dd>
+      <dt>Sn</dt><dd>匹配</dd>
 
-		<p class='single-input'>
-			<textarea id="find" placeholder="/regexp? here/i"></textarea>
-		</p>
+      <dt>A</dt><dd>不匹配</dd>
+      <dt>At</dt><dd>不匹配</dd>
+      <dt>Ab</dt><dd>不匹配</dd>
+      <dt>Ad</dt><dd>不匹配</dd>
+      <dt>Ba</dt><dd>不匹配</dd>
+      <dt>Ce</dt><dd>不匹配</dd>
+      <dt>D</dt><dd>不匹配</dd>
+      <dt>E</dt><dd>不匹配</dd>
+      <dt>En</dt><dd>不匹配</dd>
+      <dt>Fa</dt><dd>不匹配</dd>
+      <dt>Fu</dt><dd>不匹配</dd>
+      <dt>Gu</dt><dd>不匹配</dd>
+      <dt>Ha</dt><dd>不匹配</dd>
+      <dt>Hu</dt><dd>不匹配</dd>
+      <dt>I</dt><dd>不匹配</dd>
+      <dt>Is</dt><dd>不匹配</dd>
+      <dt>J</dt><dd>不匹配</dd>
+      <dt>Ka</dt><dd>不匹配</dd>
+      <dt>Kb</dt><dd>不匹配</dd>
+      <dt>L</dt><dd>不匹配</dd>
+      <dt>La</dt><dd>不匹配</dd>
+      <dt>M</dt><dd>不匹配</dd>
+      <dt>Ma</dt><dd>不匹配</dd>
+      <dt>Ob</dt><dd>不匹配</dd>
+      <dt>Op</dt><dd>不匹配</dd>
+      <dt>Pa</dt><dd>不匹配</dd>
+      <dt>Pb</dt><dd>不匹配</dd>
+      <dt>Pe</dt><dd>不匹配</dd>
+      <dt>Pg</dt><dd>不匹配</dd>
+      <dt>Po</dt><dd>不匹配</dd>
+      <dt>Q</dt><dd>不匹配</dd>
+      <dt>Qs</dt><dd>不匹配</dd>
+      <dt>R</dt><dd>不匹配</dd>
+      <dt>Rs</dt><dd>不匹配</dd>
+      <dt>Sb</dt><dd>不匹配</dd>
+      <dt>St</dt><dd>不匹配</dd>
+      <dt>Ta</dt><dd>不匹配</dd>
+      <dt>Te</dt><dd>不匹配</dd>
+      <dt>U</dt><dd>不匹配</dd>
+      <dt>Ub</dt><dd>不匹配</dd>
+      <dt>Up</dt><dd>不匹配</dd>
+      <dt>Vw</dt><dd>不匹配</dd>
+      <dt>W</dt><dd>不匹配</dd>
+      <dt>Wv</dt><dd>不匹配</dd>
+      <dt>X</dt><dd>不匹配</dd>
+      <dt>Xe</dt><dd>不匹配</dd>
+      <dt>Xp</dt><dd>不匹配</dd>
+      <dt>Ya</dt><dd>不匹配</dd>
+      <dt>Yg</dt><dd>不匹配</dd>
+      <dt>Z</dt><dd>不匹配</dd>
+      <dt>Za</dt><dd>不匹配</dd>
+    </dl>
+    <div id="congratulations">
+        恭喜，你的正则通过了所有测试用例，记住要分享这个挑战哦。
+    </div>
+  </section>
 
-		<h3>Test cases (<span id='passed-count'>0</span>/101) <a id='permalink' class='button' href='./challenge14.html'>Permalink</a> <label id="hide_passing"><input type="checkbox"> Hide passing tests</label></h3>
-		<dl id='tests'>
-			<dt>H</dt><dd>match</dd>
-			<dt>He</dt><dd>match</dd>
-			<dt>Li</dt><dd>match</dd>
-			<dt>Be</dt><dd>match</dd>
-			<dt>B</dt><dd>match</dd>
-			<dt>C</dt><dd>match</dd>
-			<dt>N</dt><dd>match</dd>
-			<dt>O</dt><dd>match</dd>
-			<dt>F</dt><dd>match</dd>
-			<dt>Ne</dt><dd>match</dd>
-			<dt>Na</dt><dd>match</dd>
-			<dt>Mg</dt><dd>match</dd>
-			<dt>Ni</dt><dd>match</dd>
-			<dt>Si</dt><dd>match</dd>
-			<dt>P</dt><dd>match</dd>
-			<dt>S</dt><dd>match</dd>
-			<dt>Cl</dt><dd>match</dd>
-			<dt>Ar</dt><dd>match</dd>
-			<dt>K</dt><dd>match</dd>
-			<dt>Ca</dt><dd>match</dd>
-			<dt>Sc</dt><dd>match</dd>
-			<dt>Ti</dt><dd>match</dd>
-			<dt>V</dt><dd>match</dd>
-			<dt>Cr</dt><dd>match</dd>
-			<dt>Mn</dt><dd>match</dd>
-			<dt>Fe</dt><dd>match</dd>
-			<dt>Co</dt><dd>match</dd>
-			<dt>Ni</dt><dd>match</dd>
-			<dt>Cu</dt><dd>match</dd>
-			<dt>Zn</dt><dd>match</dd>
-			<dt>Ga</dt><dd>match</dd>
-			<dt>Ge</dt><dd>match</dd>
-			<dt>As</dt><dd>match</dd>
-			<dt>Se</dt><dd>match</dd>
-			<dt>Br</dt><dd>match</dd>
-			<dt>Kr</dt><dd>match</dd>
-			<dt>Rb</dt><dd>match</dd>
-			<dt>Sr</dt><dd>match</dd>
-			<dt>Y</dt><dd>match</dd>
-			<dt>Zr</dt><dd>match</dd>
-			<dt>Nb</dt><dd>match</dd>
-			<dt>Mo</dt><dd>match</dd>
-			<dt>Tc</dt><dd>match</dd>
-			<dt>Ru</dt><dd>match</dd>
-			<dt>Rh</dt><dd>match</dd>
-			<dt>Pd</dt><dd>match</dd>
-			<dt>Ag</dt><dd>match</dd>
-			<dt>Cd</dt><dd>match</dd>
-			<dt>In</dt><dd>match</dd>
-			<dt>Sn</dt><dd>match</dd>
-
-			<dt>A</dt><dd>no match</dd>
-			<dt>At</dt><dd>no match</dd>
-			<dt>Ab</dt><dd>no match</dd>
-			<dt>Ad</dt><dd>no match</dd>
-			<dt>Ba</dt><dd>no match</dd>
-			<dt>Ce</dt><dd>no match</dd>
-			<dt>D</dt><dd>no match</dd>
-			<dt>E</dt><dd>no match</dd>
-			<dt>En</dt><dd>no match</dd>
-			<dt>Fa</dt><dd>no match</dd>
-			<dt>Fu</dt><dd>no match</dd>
-			<dt>Gu</dt><dd>no match</dd>
-			<dt>Ha</dt><dd>no match</dd>
-			<dt>Hu</dt><dd>no match</dd>
-			<dt>I</dt><dd>no match</dd>
-			<dt>Is</dt><dd>no match</dd>
-			<dt>J</dt><dd>no match</dd>
-			<dt>Ka</dt><dd>no match</dd>
-			<dt>Kb</dt><dd>no match</dd>
-			<dt>L</dt><dd>no match</dd>
-			<dt>La</dt><dd>no match</dd>
-			<dt>M</dt><dd>no match</dd>
-			<dt>Ma</dt><dd>no match</dd>
-			<dt>Ob</dt><dd>no match</dd>
-			<dt>Op</dt><dd>no match</dd>
-			<dt>Pa</dt><dd>no match</dd>
-			<dt>Pb</dt><dd>no match</dd>
-			<dt>Pe</dt><dd>no match</dd>
-			<dt>Pg</dt><dd>no match</dd>
-			<dt>Po</dt><dd>no match</dd>
-			<dt>Q</dt><dd>no match</dd>
-			<dt>Qs</dt><dd>no match</dd>
-			<dt>R</dt><dd>no match</dd>
-			<dt>Rs</dt><dd>no match</dd>
-			<dt>Sb</dt><dd>no match</dd>
-			<dt>St</dt><dd>no match</dd>
-			<dt>Ta</dt><dd>no match</dd>
-			<dt>Te</dt><dd>no match</dd>
-			<dt>U</dt><dd>no match</dd>
-			<dt>Ub</dt><dd>no match</dd>
-			<dt>Up</dt><dd>no match</dd>
-			<dt>Vw</dt><dd>no match</dd>
-			<dt>W</dt><dd>no match</dd>
-			<dt>Wv</dt><dd>no match</dd>
-			<dt>X</dt><dd>no match</dd>
-			<dt>Xe</dt><dd>no match</dd>
-			<dt>Xp</dt><dd>no match</dd>
-			<dt>Ya</dt><dd>no match</dd>
-			<dt>Yg</dt><dd>no match</dd>
-			<dt>Z</dt><dd>no match</dd>
-			<dt>Za</dt><dd>no match</dd>
-		</dl>
-		<div id="congratulations">Congratulations, your regex passes all the test cases! Remember to share this challenge.</div>
-	</section>
-
-	<footer>
-		Public domain. Site by <a href="http://macr.ae/">Callum Macrae</a>
-	</footer>
-
-	<script src="assets/challenge.js"></script>
-	<!-- Social media -->
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	<script type="text/javascript">
-		window.___gcfg = {lang: 'en-GB'};
-
-		(function() {
-			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			po.src = 'https://apis.google.com/js/plusone.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
-	</script>
-	<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=251120905643";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-10431066-8']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+  <script src="assets/challenge.js"></script>
 </body>
 </html>

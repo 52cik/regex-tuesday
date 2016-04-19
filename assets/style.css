@@ -201,13 +201,13 @@ footer {
 }
 
 
-span[title] {
+section p span[title] {
   background-color: #f0f0f0;
   padding: 2px;
   cursor: pointer;
 }
 
-span:hover {
+section p span:hover {
   background-color: #aaa;
 }
 
@@ -219,4 +219,11 @@ blockquote {
   margin: 10px 0;
   border-left: 5px solid #657b83;
   background: #f6f6f6;
+}
+
+.challenges span {
+  color: #a94442;
+}
+.challenges span.cn {
+  color: #3c763d;
 }

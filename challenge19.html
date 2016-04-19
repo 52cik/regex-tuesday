@@ -1,246 +1,203 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Regex Challenge - Week Nineteen</title>
-
-	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet'>
-	<link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8">
+  <title>正则周二挑战赛 - 第十九周</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-	<header>
-		<h1>Regex Tuesday Challenge - Week Nineteen</h1>
+  <header>
+    <h1>正则周二挑战赛 - 第十九周</h1>
+    <nav>
+      <a href="./">&laquo; 查看所有挑战</a>
+    </nav>
+  </header>
 
-		<nav>
-			<a href="./">&laquo; View all Challenges</a>
-		</nav>
+  <section>
+    <p>Challenge number nineteen is another golf challenge; in this challenge, you must match all the valid HTML tag names in as few characters as possible. You match <em>only valid tag names</em> - more failing test cases may be added later.</p>
+    <p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
 
-		<div id='social'>
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="callumacrae" data-hashtags="regextuesday">Tweet</a>
-			<div class="g-plusone" data-size="medium"></div>
-			<div class="fb-like" data-send="false" data-layout="button_count" data-width="75" data-show-faces="false" style="top: -4px"></div>
-			<div style='display: inline-block; position: relative; margin-left: 30px; top: 3px;'>
-				<script type="text/javascript" src="//pay.reddit.com/static/button/button1.js"></script>
-			</div>
-		</div>
-	</header>
+    <p class='single-input'>
+      <textarea id="find" placeholder="/正则? 写这里../i"></textarea>
+    </p>
 
-	<section>
-		<p>Challenge number nineteen is another golf challenge; in this challenge, you must match all the valid HTML tag names in as few characters as possible. You match <em>only valid tag names</em> - more failing test cases may be added later.</p>
-		<p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
+    <h3>测试用例 (<span id='passed-count'>0</span>/168) <a id='permalink' class='button' href='./challenge17.html'>永久链接 (分享连接)</a> <label id="hide_passing"><input type="checkbox"> 隐藏通过的条目</label></h3>
+    <dl id='tests'>
+      <dt>a</dt><dd>匹配</dd>
+      <dt>abbr</dt><dd>匹配</dd>
+      <dt>address</dt><dd>匹配</dd>
+      <dt>area</dt><dd>匹配</dd>
+      <dt>article</dt><dd>匹配</dd>
+      <dt>aside</dt><dd>匹配</dd>
+      <dt>audio</dt><dd>匹配</dd>
+      <dt>b</dt><dd>匹配</dd>
+      <dt>base</dt><dd>匹配</dd>
+      <dt>bdi</dt><dd>匹配</dd>
+      <dt>bdo</dt><dd>匹配</dd>
+      <dt>blockquote</dt><dd>匹配</dd>
+      <dt>body</dt><dd>匹配</dd>
+      <dt>br</dt><dd>匹配</dd>
+      <dt>button</dt><dd>匹配</dd>
+      <dt>canvas</dt><dd>匹配</dd>
+      <dt>caption</dt><dd>匹配</dd>
+      <dt>cite</dt><dd>匹配</dd>
+      <dt>code</dt><dd>匹配</dd>
+      <dt>col</dt><dd>匹配</dd>
+      <dt>colgroup</dt><dd>匹配</dd>
+      <dt>command</dt><dd>匹配</dd>
+      <dt>datalist</dt><dd>匹配</dd>
+      <dt>dd</dt><dd>匹配</dd>
+      <dt>del</dt><dd>匹配</dd>
+      <dt>details</dt><dd>匹配</dd>
+      <dt>dfn</dt><dd>匹配</dd>
+      <dt>div</dt><dd>匹配</dd>
+      <dt>dl</dt><dd>匹配</dd>
+      <dt>dt</dt><dd>匹配</dd>
+      <dt>em</dt><dd>匹配</dd>
+      <dt>embed</dt><dd>匹配</dd>
+      <dt>fieldset</dt><dd>匹配</dd>
+      <dt>figcaption</dt><dd>匹配</dd>
+      <dt>figure</dt><dd>匹配</dd>
+      <dt>footer</dt><dd>匹配</dd>
+      <dt>form</dt><dd>匹配</dd>
+      <dt>h1</dt><dd>匹配</dd>
+      <dt>h2</dt><dd>匹配</dd>
+      <dt>h3</dt><dd>匹配</dd>
+      <dt>h4</dt><dd>匹配</dd>
+      <dt>h5</dt><dd>匹配</dd>
+      <dt>h6</dt><dd>匹配</dd>
+      <dt>head</dt><dd>匹配</dd>
+      <dt>header</dt><dd>匹配</dd>
+      <dt>hgroup</dt><dd>匹配</dd>
+      <dt>hr</dt><dd>匹配</dd>
+      <dt>html</dt><dd>匹配</dd>
+      <dt>i</dt><dd>匹配</dd>
+      <dt>iframe</dt><dd>匹配</dd>
+      <dt>img</dt><dd>匹配</dd>
+      <dt>input</dt><dd>匹配</dd>
+      <dt>ins</dt><dd>匹配</dd>
+      <dt>kbd</dt><dd>匹配</dd>
+      <dt>keygen</dt><dd>匹配</dd>
+      <dt>label</dt><dd>匹配</dd>
+      <dt>legend</dt><dd>匹配</dd>
+      <dt>li</dt><dd>匹配</dd>
+      <dt>link</dt><dd>匹配</dd>
+      <dt>map</dt><dd>匹配</dd>
+      <dt>mark</dt><dd>匹配</dd>
+      <dt>menu</dt><dd>匹配</dd>
+      <dt>meta</dt><dd>匹配</dd>
+      <dt>meter</dt><dd>匹配</dd>
+      <dt>nav</dt><dd>匹配</dd>
+      <dt>noscript</dt><dd>匹配</dd>
+      <dt>object</dt><dd>匹配</dd>
+      <dt>ol</dt><dd>匹配</dd>
+      <dt>optgroup</dt><dd>匹配</dd>
+      <dt>option</dt><dd>匹配</dd>
+      <dt>output</dt><dd>匹配</dd>
+      <dt>p</dt><dd>匹配</dd>
+      <dt>param</dt><dd>匹配</dd>
+      <dt>pre</dt><dd>匹配</dd>
+      <dt>progress</dt><dd>匹配</dd>
+      <dt>q</dt><dd>匹配</dd>
+      <dt>rp</dt><dd>匹配</dd>
+      <dt>rt</dt><dd>匹配</dd>
+      <dt>ruby</dt><dd>匹配</dd>
+      <dt>s</dt><dd>匹配</dd>
+      <dt>samp</dt><dd>匹配</dd>
+      <dt>script</dt><dd>匹配</dd>
+      <dt>section</dt><dd>匹配</dd>
+      <dt>select</dt><dd>匹配</dd>
+      <dt>small</dt><dd>匹配</dd>
+      <dt>source</dt><dd>匹配</dd>
+      <dt>span</dt><dd>匹配</dd>
+      <dt>strong</dt><dd>匹配</dd>
+      <dt>style</dt><dd>匹配</dd>
+      <dt>sub</dt><dd>匹配</dd>
+      <dt>summary</dt><dd>匹配</dd>
+      <dt>sup</dt><dd>匹配</dd>
+      <dt>table</dt><dd>匹配</dd>
+      <dt>tbody</dt><dd>匹配</dd>
+      <dt>td</dt><dd>匹配</dd>
+      <dt>textarea</dt><dd>匹配</dd>
+      <dt>tfoot</dt><dd>匹配</dd>
+      <dt>th</dt><dd>匹配</dd>
+      <dt>thead</dt><dd>匹配</dd>
+      <dt>time</dt><dd>匹配</dd>
+      <dt>title</dt><dd>匹配</dd>
+      <dt>tr</dt><dd>匹配</dd>
+      <dt>track</dt><dd>匹配</dd>
+      <dt>u</dt><dd>匹配</dd>
+      <dt>ul</dt><dd>匹配</dd>
+      <dt>var</dt><dd>匹配</dd>
+      <dt>video</dt><dd>匹配</dd>
+      <dt>wbr</dt><dd>匹配</dd>
 
-		<p class='single-input'>
-			<textarea id="find" placeholder="/regexp? here/i"></textarea>
-		</p>
+      <dt>ab</dt><dd>不匹配</dd>
+      <dt>acronym</dt><dd>不匹配</dd>
+      <dt>applet</dt><dd>不匹配</dd>
+      <dt>az</dt><dd>不匹配</dd>
+      <dt>ba</dt><dd>不匹配</dd>
+      <dt>basefont</dt><dd>不匹配</dd>
+      <dt>big</dt><dd>不匹配</dd>
+      <dt>c</dt><dd>不匹配</dd>
+      <dt>center</dt><dd>不匹配</dd>
+      <dt>d</dt><dd>不匹配</dd>
+      <dt>dad</dt><dd>不匹配</dd>
+      <dt>dir</dt><dd>不匹配</dd>
+      <dt>e</dt><dd>不匹配</dd>
+      <dt>eb</dt><dd>不匹配</dd>
+      <dt>f</dt><dd>不匹配</dd>
+      <dt>font</dt><dd>不匹配</dd>
+      <dt>frame</dt><dd>不匹配</dd>
+      <dt>frameset</dt><dd>不匹配</dd>
+      <dt>g</dt><dd>不匹配</dd>
+      <dt>ga</dt><dd>不匹配</dd>
+      <dt>gurtrood</dt><dd>不匹配</dd>
+      <dt>h</dt><dd>不匹配</dd>
+      <dt>h0</dt><dd>不匹配</dd>
+      <dt>h7</dt><dd>不匹配</dd>
+      <dt>h10</dt><dd>不匹配</dd>
+      <dt>in</dt><dd>不匹配</dd>
+      <dt>j</dt><dd>不匹配</dd>
+      <dt>jam</dt><dd>不匹配</dd>
+      <dt>k</dt><dd>不匹配</dd>
+      <dt>key</dt><dd>不匹配</dd>
+      <dt>l</dt><dd>不匹配</dd>
+      <dt>la</dt><dd>不匹配</dd>
+      <dt>m</dt><dd>不匹配</dd>
+      <dt>man</dt><dd>不匹配</dd>
+      <dt>n</dt><dd>不匹配</dd>
+      <dt>o</dt><dd>不匹配</dd>
+      <dt>old</dt><dd>不匹配</dd>
+      <dt>put</dt><dd>不匹配</dd>
+      <dt>queen</dt><dd>不匹配</dd>
+      <dt>r</dt><dd>不匹配</dd>
+      <dt>rn</dt><dd>不匹配</dd>
+      <dt>slower</dt><dd>不匹配</dd>
+      <dt>strike</dt><dd>不匹配</dd>
+      <dt>t</dt><dd>不匹配</dd>
+      <dt>tab</dt><dd>不匹配</dd>
+      <dt>tf</dt><dd>不匹配</dd>
+      <dt>tt</dt><dd>不匹配</dd>
+      <dt>un</dt><dd>不匹配</dd>
+      <dt>v</dt><dd>不匹配</dd>
+      <dt>vw</dt><dd>不匹配</dd>
+      <dt>vehicle</dt><dd>不匹配</dd>
+      <dt>w</dt><dd>不匹配</dd>
+      <dt>weird</dt><dd>不匹配</dd>
+      <dt>x</dt><dd>不匹配</dd>
+      <dt>xx</dt><dd>不匹配</dd>
+      <dt>y</dt><dd>不匹配</dd>
+      <dt>yahooa</dt><dd>不匹配</dd>
+      <dt>z</dt><dd>不匹配</dd>
+      <dt>zebra</dt><dd>不匹配</dd>
+      <dt>zebras</dt><dd>不匹配</dd>
+    </dl>
+    <div id="congratulations">
+        恭喜，你的正则通过了所有测试用例，记住要分享这个挑战哦。
+    </div>
+  </section>
 
-		<h3>Test cases (<span id='passed-count'>0</span>/168) <a id='permalink' class='button' href='./challenge17.html'>Permalink</a> <label id="hide_passing"><input type="checkbox"> Hide passing tests</label></h3>
-		<dl id='tests'>
-			<dt>a</dt><dd>match</dd>
-			<dt>abbr</dt><dd>match</dd>
-			<dt>address</dt><dd>match</dd>
-			<dt>area</dt><dd>match</dd>
-			<dt>article</dt><dd>match</dd>
-			<dt>aside</dt><dd>match</dd>
-			<dt>audio</dt><dd>match</dd>
-			<dt>b</dt><dd>match</dd>
-			<dt>base</dt><dd>match</dd>
-			<dt>bdi</dt><dd>match</dd>
-			<dt>bdo</dt><dd>match</dd>
-			<dt>blockquote</dt><dd>match</dd>
-			<dt>body</dt><dd>match</dd>
-			<dt>br</dt><dd>match</dd>
-			<dt>button</dt><dd>match</dd>
-			<dt>canvas</dt><dd>match</dd>
-			<dt>caption</dt><dd>match</dd>
-			<dt>cite</dt><dd>match</dd>
-			<dt>code</dt><dd>match</dd>
-			<dt>col</dt><dd>match</dd>
-			<dt>colgroup</dt><dd>match</dd>
-			<dt>command</dt><dd>match</dd>
-			<dt>datalist</dt><dd>match</dd>
-			<dt>dd</dt><dd>match</dd>
-			<dt>del</dt><dd>match</dd>
-			<dt>details</dt><dd>match</dd>
-			<dt>dfn</dt><dd>match</dd>
-			<dt>div</dt><dd>match</dd>
-			<dt>dl</dt><dd>match</dd>
-			<dt>dt</dt><dd>match</dd>
-			<dt>em</dt><dd>match</dd>
-			<dt>embed</dt><dd>match</dd>
-			<dt>fieldset</dt><dd>match</dd>
-			<dt>figcaption</dt><dd>match</dd>
-			<dt>figure</dt><dd>match</dd>
-			<dt>footer</dt><dd>match</dd>
-			<dt>form</dt><dd>match</dd>
-			<dt>h1</dt><dd>match</dd>
-			<dt>h2</dt><dd>match</dd>
-			<dt>h3</dt><dd>match</dd>
-			<dt>h4</dt><dd>match</dd>
-			<dt>h5</dt><dd>match</dd>
-			<dt>h6</dt><dd>match</dd>
-			<dt>head</dt><dd>match</dd>
-			<dt>header</dt><dd>match</dd>
-			<dt>hgroup</dt><dd>match</dd>
-			<dt>hr</dt><dd>match</dd>
-			<dt>html</dt><dd>match</dd>
-			<dt>i</dt><dd>match</dd>
-			<dt>iframe</dt><dd>match</dd>
-			<dt>img</dt><dd>match</dd>
-			<dt>input</dt><dd>match</dd>
-			<dt>ins</dt><dd>match</dd>
-			<dt>kbd</dt><dd>match</dd>
-			<dt>keygen</dt><dd>match</dd>
-			<dt>label</dt><dd>match</dd>
-			<dt>legend</dt><dd>match</dd>
-			<dt>li</dt><dd>match</dd>
-			<dt>link</dt><dd>match</dd>
-			<dt>map</dt><dd>match</dd>
-			<dt>mark</dt><dd>match</dd>
-			<dt>menu</dt><dd>match</dd>
-			<dt>meta</dt><dd>match</dd>
-			<dt>meter</dt><dd>match</dd>
-			<dt>nav</dt><dd>match</dd>
-			<dt>noscript</dt><dd>match</dd>
-			<dt>object</dt><dd>match</dd>
-			<dt>ol</dt><dd>match</dd>
-			<dt>optgroup</dt><dd>match</dd>
-			<dt>option</dt><dd>match</dd>
-			<dt>output</dt><dd>match</dd>
-			<dt>p</dt><dd>match</dd>
-			<dt>param</dt><dd>match</dd>
-			<dt>pre</dt><dd>match</dd>
-			<dt>progress</dt><dd>match</dd>
-			<dt>q</dt><dd>match</dd>
-			<dt>rp</dt><dd>match</dd>
-			<dt>rt</dt><dd>match</dd>
-			<dt>ruby</dt><dd>match</dd>
-			<dt>s</dt><dd>match</dd>
-			<dt>samp</dt><dd>match</dd>
-			<dt>script</dt><dd>match</dd>
-			<dt>section</dt><dd>match</dd>
-			<dt>select</dt><dd>match</dd>
-			<dt>small</dt><dd>match</dd>
-			<dt>source</dt><dd>match</dd>
-			<dt>span</dt><dd>match</dd>
-			<dt>strong</dt><dd>match</dd>
-			<dt>style</dt><dd>match</dd>
-			<dt>sub</dt><dd>match</dd>
-			<dt>summary</dt><dd>match</dd>
-			<dt>sup</dt><dd>match</dd>
-			<dt>table</dt><dd>match</dd>
-			<dt>tbody</dt><dd>match</dd>
-			<dt>td</dt><dd>match</dd>
-			<dt>textarea</dt><dd>match</dd>
-			<dt>tfoot</dt><dd>match</dd>
-			<dt>th</dt><dd>match</dd>
-			<dt>thead</dt><dd>match</dd>
-			<dt>time</dt><dd>match</dd>
-			<dt>title</dt><dd>match</dd>
-			<dt>tr</dt><dd>match</dd>
-			<dt>track</dt><dd>match</dd>
-			<dt>u</dt><dd>match</dd>
-			<dt>ul</dt><dd>match</dd>
-			<dt>var</dt><dd>match</dd>
-			<dt>video</dt><dd>match</dd>
-			<dt>wbr</dt><dd>match</dd>
-
-			<dt>ab</dt><dd>no match</dd>
-			<dt>acronym</dt><dd>no match</dd>
-			<dt>applet</dt><dd>no match</dd>
-			<dt>az</dt><dd>no match</dd>
-			<dt>ba</dt><dd>no match</dd>
-			<dt>basefont</dt><dd>no match</dd>
-			<dt>big</dt><dd>no match</dd>
-			<dt>c</dt><dd>no match</dd>
-			<dt>center</dt><dd>no match</dd>
-			<dt>d</dt><dd>no match</dd>
-			<dt>dad</dt><dd>no match</dd>
-			<dt>dir</dt><dd>no match</dd>
-			<dt>e</dt><dd>no match</dd>
-			<dt>eb</dt><dd>no match</dd>
-			<dt>f</dt><dd>no match</dd>
-			<dt>font</dt><dd>no match</dd>
-			<dt>frame</dt><dd>no match</dd>
-			<dt>frameset</dt><dd>no match</dd>
-			<dt>g</dt><dd>no match</dd>
-			<dt>ga</dt><dd>no match</dd>
-			<dt>gurtrood</dt><dd>no match</dd>
-			<dt>h</dt><dd>no match</dd>
-			<dt>h0</dt><dd>no match</dd>
-			<dt>h7</dt><dd>no match</dd>
-			<dt>h10</dt><dd>no match</dd>
-			<dt>in</dt><dd>no match</dd>
-			<dt>j</dt><dd>no match</dd>
-			<dt>jam</dt><dd>no match</dd>
-			<dt>k</dt><dd>no match</dd>
-			<dt>key</dt><dd>no match</dd>
-			<dt>l</dt><dd>no match</dd>
-			<dt>la</dt><dd>no match</dd>
-			<dt>m</dt><dd>no match</dd>
-			<dt>man</dt><dd>no match</dd>
-			<dt>n</dt><dd>no match</dd>
-			<dt>o</dt><dd>no match</dd>
-			<dt>old</dt><dd>no match</dd>
-			<dt>put</dt><dd>no match</dd>
-			<dt>queen</dt><dd>no match</dd>
-			<dt>r</dt><dd>no match</dd>
-			<dt>rn</dt><dd>no match</dd>
-			<dt>slower</dt><dd>no match</dd>
-			<dt>strike</dt><dd>no match</dd>
-			<dt>t</dt><dd>no match</dd>
-			<dt>tab</dt><dd>no match</dd>
-			<dt>tf</dt><dd>no match</dd>
-			<dt>tt</dt><dd>no match</dd>
-			<dt>un</dt><dd>no match</dd>
-			<dt>v</dt><dd>no match</dd>
-			<dt>vw</dt><dd>no match</dd>
-			<dt>vehicle</dt><dd>no match</dd>
-			<dt>w</dt><dd>no match</dd>
-			<dt>weird</dt><dd>no match</dd>
-			<dt>x</dt><dd>no match</dd>
-			<dt>xx</dt><dd>no match</dd>
-			<dt>y</dt><dd>no match</dd>
-			<dt>yahooa</dt><dd>no match</dd>
-			<dt>z</dt><dd>no match</dd>
-			<dt>zebra</dt><dd>no match</dd>
-			<dt>zebras</dt><dd>no match</dd>
-		</dl>
-		<div id="congratulations">Congratulations, your regex passes all the test cases! Remember to share this challenge.</div>
-	</section>
-
-	<footer>
-		Public domain. Site by <a href="http://macr.ae/">Callum Macrae</a>
-	</footer>
-
-	<script src="assets/challenge.js"></script>
-	<!-- Social media -->
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	<script type="text/javascript">
-		window.___gcfg = {lang: 'en-GB'};
-
-		(function() {
-			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			po.src = 'https://apis.google.com/js/plusone.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
-	</script>
-	<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=251120905643";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-10431066-8']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+  <script src="assets/challenge.js"></script>
 </body>
 </html>
