@@ -111,7 +111,7 @@ function validateRegex(warnUser) {
 					fails++;
 				}
 			} else {
-				if (regex.test(test.input) === (test.output === 'match')) {
+				if (regex.test(test.input) === (test.output === 'match' || test.output === '\u5339\u914D')) {
 					newClass = 'passed';
 					passes++;
 				} else {
