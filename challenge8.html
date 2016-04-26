@@ -14,9 +14,30 @@
   </header>
 
   <section>
-    <p>This challenge is a hybrid of challenge #1 - matching repeated words - and challenge #4, a basic MarkDown parser. The challenge is to match (immediately) repeating MarkDown list items! Check out the examples - it is easier to look at them than to have it explained.</p>
-    <p>Repeated items should be wrapped in double asterisks, for MarkDown bold. The second <code>* List item</code> should be replaced with <code>* **List item**</code></p>
-    <p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
+    <blockquote>
+    <p>
+      <span title="This challenge is a hybrid of challenge #1 - matching repeated words - and challenge #4, a basic MarkDown parser.">
+        这次挑战是挑战#1-重复的单词 和 挑战#4-MarkDown 斜体的混合版本。
+      </span>
+      <span title="The challenge is to match (immediately) repeating MarkDown list items!">
+        本次挑战是匹配（立即）重复的 MarkDown 列表项！
+      </span>
+      <span title="Check out the examples - it is easier to look at them than to have it explained.">
+        先看看例子吧 - 看例子比解释更容易理解。
+      </span>
+    </p>
+    <p>
+      <span title="Repeated items should be wrapped in double asterisks, for MarkDown bold.">
+        重复的项目需要用 MarkDown 强调语法包裹。
+      </span>
+      <br>
+      <span title="The second '* List item' should be replaced with '* **List item**'">
+        第二个 '<code>* List item</code>' 应该被替换为 '<code>* **List item**</code>'
+      </span>
+    </p>
+    </blockquote>
+
+    <blockquote>在你输入正则之后，每个测试用例都会标注为是否通过，红色是未通过，绿色是通过，因为是基于 web 的，所以只能使用基于 JavaScript 传统型 NFA (Traditional NFA)正则引擎。它类似于PCRE，但有一些不同之处。</blockquote>
 
     <p>
       <input type="text" id="find" placeholder="/正则? 写这里../i">
