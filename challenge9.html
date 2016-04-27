@@ -14,10 +14,28 @@
   </header>
 
   <section>
-    <p>Another MarkDown challenge! This challenge is simply to parse MarkDown links - so <code>[text](http://example.com)</code> would simply be replaced with the following HTML: <code>&lt;a href="http://example.com"&gt;text&lt;/a&gt;</code>.</p>
-    <p>Be careful with images. <code>![alt text](image location)</code> should be left alone, as it isn't a link.</p>
-    <p>If you don't want to write an expression for URLs too, you can see answers to the previous challenge on URLs <a href="http://www.reddit.com/r/javascript/comments/11ji6i/regex_challenge_7_domain_names/">on Reddit</a>.</p>
-    <p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
+    <blockquote>
+      <p>
+        <span title="Another MarkDown challenge! This challenge is simply to parse MarkDown links">
+          另一个 MarkDown 挑战！本次挑战仅处理 MarkDown 的链接。
+        </span>
+        <br>
+        <span title="so '[text](http://example.com)' would simply be replaced with the following HTML: '&lt;a href=&quot;http://example.com&quot;&gt;text&lt;/a&gt;'.">
+          例如 <code>[text](http://example.com)</code> <br>应该解析为HTML：<code>&lt;a href="http://example.com"&gt;text&lt;/a&gt;</code>。
+        </span>
+      </p>
+      <p>
+        <span title="Be careful with images.">
+          注意 images 标签。
+        </span>
+        <span title="'![alt text](image location)' should be left alone, as it isn't a link.">
+          <code>![alt text](image location)</code> 不需要解析，因为他不是超链接。
+        </span>
+      </p>
+    </blockquote>
+
+
+    <blockquote>在你输入正则之后，每个测试用例都会标注为是否通过，红色是未通过，绿色是通过，因为是基于 web 的，所以只能使用基于 JavaScript 传统型 NFA (Traditional NFA)正则引擎。它类似于PCRE，但有一些不同之处。</blockquote>
 
     <p>
       <input type="text" id="find" placeholder="/正则? 写这里../i">
