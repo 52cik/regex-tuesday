@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>正则周二挑战赛 - 第二十一周</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>正则周二挑战赛 - 第二十一周</h1>
+    <nav>
+      <a href="./">&laquo; 查看所有挑战</a>
+    </nav>
+  </header>
+
+  <section>
+    <blockquote>
+      <p>
+        本周挑战是由 <a href="https://github.com/chrisbing">@Chris</a> 童鞋发起的，目标是匹配一个字符串是否为回环字符串(回文)，回文规则为: 假设字符串长度为L，规定字符串的所有第n(n为从0到L-1)个元素都与第l-1-n个元素相等。直接看下面例子大家就秒懂了。
+      </p>
+    </blockquote>
+
+    <blockquote>在你输入正则之后，每个测试用例都会标注为是否通过，红色是未通过，绿色是通过，因为是基于 web 的，所以只能使用基于 JavaScript 传统型 NFA (Traditional NFA)正则引擎。它类似于PCRE，但有一些不同之处。</blockquote>
+
+    <p class='single-input'>
+      <textarea id="find" placeholder="/正则? 写这里../i"></textarea>
+    </p>
+
+    <h3>测试用例 (<span id='passed-count'>0</span>/17) <a id='permalink' class='button' href='./challenge7.html'>永久链接 (分享连接)</a> <label id="hide_passing"><input type="checkbox"> 隐藏通过的条目</label></h3>
+    <dl id='tests'>
+      <dt>aba</dt><dd>匹配</dd>
+      <dt>abba</dt><dd>匹配</dd>
+      <dt>12321</dt><dd>匹配</dd>
+      <dt>level</dt><dd>匹配</dd>
+      <dt>xyzyzyzyx</dt><dd>匹配</dd>
+      <dt>xyzyyzyx</dt><dd>匹配</dd>
+      <dt>abc cba</dt><dd>匹配</dd>
+      <dt>/aa/</dt><dd>匹配</dd>
+      <dt>[]][</dt><dd>匹配</dd>
+      <dt>:a+a:</dt><dd>匹配</dd>
+      <dt>xxxxxxxx</dt><dd>匹配</dd>
+      <dt>我的生字表表字生的我</dt><dd>匹配</dd>
+
+      <dt>acdc</dt><dd>不匹配</dd>
+      <dt>xyzyzyzyxx</dt><dd>不匹配</dd>
+      <dt>book</dt><dd>不匹配</dd>
+      <dt>abababab</dt><dd>不匹配</dd>
+      <dt>ab1212ab</dt><dd>不匹配</dd>
+    </dl>
+    <div id="congratulations">
+        恭喜，你的正则通过了所有测试用例，记住要分享这个挑战哦。
+    </div>
+  </section>
+
+  <script src="assets/challenge.js"></script>
+</body>
+</html>
