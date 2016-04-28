@@ -14,16 +14,68 @@
   </header>
 
   <section>
-    <p>We're into double figures! This challenge was <a href="http://www.reddit.com/user/jordanreiter">/u/jordanreiter</a>'s idea; the challenge is to turn a sentence into a number of "tokens" that would be suitable for something like a search engine to use a keywords. For example, "<em>don't tell Suzie Smith-Hopper that I broke Daniel's toy horse</em>" would be turned into "<em>don't,tell,Suzie,Smith-Hopper,that,I,broke,Daniel's,toy,horse</em>" and "<em>other "big name" items</em>" would be turned into "<em>other,big name, items</em>".</p>
-    <p>The four criteria are as follows:</p>
+    <blockquote>
+    <p>
+      <span title="We're into double figures!">
+        我们的挑战迎来了两位数！
+      </span>
+      <span title="This challenge was /u/jordanreiter's idea;">
+        本周挑战是 <a href="http://www.reddit.com/user/jordanreiter">/u/jordanreiter</a> 的主义;
+      </span>
+      <span title="the challenge is to turn a sentence into a number of 'tokens' that would be suitable for something like a search engine to use a keywords.">
+        该挑战是把一个句子转为合适搜索的 'tokens' 关键词。
+      </span>
+      <br>
+      <span title="For example, "don't tell Suzie Smith-Hopper that I broke Daniel's toy horse" would be turned into "don't,tell,Suzie,Smith-Hopper,that,I,broke,Daniel's,toy,horse" and "other "big name" items" would be turned into "other,big name, items".">
+        例如 - "<em>don't tell Suzie Smith-Hopper that I broke Daniel's toy horse</em>" <br>
+        应转为 "<em>don't,tell,Suzie,Smith-Hopper,that,I,broke,Daniel's,toy,horse</em>"
+        <br>
+        并且 "<em>other "big name" items</em>" 应该转为 "<em>other,big name, items</em>"。
+      </span>
+    </p>
+    <p>
+      <span title="The four criteria are as follows:">
+        四个标准如下:
+      </span>
+    </p>
     <ul>
-      <li>If words are in quotes, treat them as a single separate token: eg "<em>This "huge test" is pointless</em>" would be changed to "<em>this,huge test,is,pointless</em>". This applies to both single quotes and double quotes.</li>
-      <li>Hyphenated last names (such as "Smith-Hopper") should be a single token, but words with more hyphens, or hyphens at the beginning or end of the word, should have the hyphens stripped and be treated as separate tokens: "<em>Suzie Smith-Hopper test--hyphens</em>" should be changed to "<em>Suzie,Smith-Hopper,test,hyphens</em>".</li>
-      <li>Contractions should be treated as a single token; "<em>I can't do it</em>" would be changed to "<em>I,can't,do,it</em>".</li>
-      <li>Punctuation should be removed (but not hyphens and quotes as above); "<em>Too long; didn't read</em>" would turn into "<em>Too,long,didn't,read</em>".</li>
+      <li>
+        <p>
+          <span title="If words are in quotes, treat them as a single separate token: eg “<em>This &quot;huge test&quot; is pointless</em>” would be changed to “<em>this,huge test,is,pointless</em>”. This applies to both single quotes and double quotes.">
+            如果把英语单词放在引号内，就将他当做一个关键词：例如 "<em>This "huge test" is pointless</em>" 应该转为 "<em>this,huge test,is,pointless</em>"。对于单引号和双引号都应该这样处理。
+          </span>
+        </p>
+      </li>
+
+      <li>
+        <p><span title="Hyphenated last names (such as "Smith-Hopper") should be a single token, but words with more hyphens, or hyphens at the beginning or end of the word, should have the hyphens stripped and be treated as separate tokens: "Suzie Smith-Hopper test--hyphens" should be changed to "Suzie,Smith-Hopper,test,hyphens".">
+          连续的词 (例如 "Smith-Hopper") 应该被当做一个关键词, 但是连续出现多个横杆，或者在单词开头或结尾出现横杆的话，应该被当做多个关键词处理: "<em>Suzie Smith-Hopper test--hyphens</em>" 应该转为 "<em>Suzie,Smith-Hopper,test,hyphens</em>"。
+        </span></p>
+      </li>
+
+      <li>
+        <p>
+          <span title="Contractions should be treated as a single token; “I can't do it” would be changed to “I,can't,do,it”.">
+            缩写的词，也应该当做一个关键词，例如: "<em>I can't do it</em>" 应该转为 "<em>I,can't,do,it</em>".
+          </span>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <span title="Punctuation should be removed (but not hyphens and quotes as above); "Too long; didn't read" would turn into "Too,long,didn't,read".">
+            多余的标点符号应该被移除 (- 和 引号 要转义); "<em>Too long; didn't read</em>" 应该转为 "<em>Too,long,didn't,read</em>".
+          </span>
+        </p>
+      </li>
     </ul>
-    <p>This challenge is <strong>challenging</strong>! It is certainly possible, though.</p>
-    <p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
+
+    <p><span title="This challenge is challenging! It is certainly possible, though.">
+      这是个具有<strong>挑战性</strong>的挑战! 当然他是可以实现的，加油。
+    </span></p>
+    </blockquote>
+
+    <blockquote>在你输入正则之后，每个测试用例都会标注为是否通过，红色是未通过，绿色是通过，因为是基于 web 的，所以只能使用基于 JavaScript 传统型 NFA (Traditional NFA)正则引擎。它类似于PCRE，但有一些不同之处。</blockquote>
 
     <p>
       <input type="text" id="find" placeholder="/正则? 写这里../i">
