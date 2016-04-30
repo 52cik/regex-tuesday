@@ -14,8 +14,16 @@
   </header>
 
   <section>
-    <p>This weeks challenge is another slightly easier challenge. In it, you must fix the whitespace in a sentence or paragraph; before, there could be multiple spaces or tabs between two words. You must write a regex such that the final string has one space between words, and two spaces after full stops (hint; there will never be a tab following a full stop). New lines should be left alone.</p>
-    <p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
+    <blockquote>
+    <p>
+    <span title="This weeks challenge is another slightly easier challenge.">本周的挑战是一个比较容易的挑战。</span>
+    <span title="In it, you must fix the whitespace in a sentence or paragraph;">在这，你必须修复一个句子或段落中的空白；</span>
+    <span title="before, there could be multiple spaces or tabs between two words.">两个单词之间可能有多个空格或制表符。</span>
+    <span title="You must write a regex such that the final string has one space between words, and two spaces after full stops (hint; there will never be a tab following a full stop).">你要做的是用正则修复空格，两个单词之间是一个空格，句号后是两个空格（提示，tab不会出现在句尾）。</span>
+    </p>
+    </blockquote>
+
+    <blockquote>在你输入正则之后，每个测试用例都会标注为是否通过，红色是未通过，绿色是通过，因为是基于 web 的，所以只能使用基于 JavaScript 传统型 NFA (Traditional NFA)正则引擎。它类似于PCRE，但有一些不同之处。</blockquote>
 
     <p>
       <input type="text" id="find" placeholder="/正则? 写这里../i">
@@ -23,20 +31,21 @@
     </p>
 
     <h3>测试用例 (<span id='passed-count'>0</span>/12) <a id='permalink' class='button' href='./challenge12.html'>永久链接 (分享连接)</a> <label id="hide_passing"><input type="checkbox"> 隐藏通过的条目</label></h3>
-    <dl id='tests'>
-      <dt>This is already a valid sentence.</dt><dd>This is already a valid sentence.</dd>
-      <dt>Extra  spaces</dt><dd>Extra spaces</dd>
-      <dt>Multiple  extra  spaces</dt><dd>Multiple extra spaces</dd>
-      <dt>Tab here</dt><dd>Tab here</dd>
-      <dt>Multiple  tabs  here</dt><dd>Multiple tabs here</dd>
-      <dt>Tab and  spaces</dt><dd>Tab and spaces</dd>
-      <dt>Multiple    tabs</dt><dd>Multiple tabs</dd>
-      <dt>Mixed    whitespace</dt><dd>Mixed whitespace</dd>
-      <dt>Sentence. Sentence.</dt><dd>Sentence.  Sentence.</dd>
-      <dt>Sentence with words.   Sentence.</dt><dd>Sentence with words.  Sentence.</dd>
-      <dt>The  quick brown fox.   Jumped.</dt><dd>The quick brown fox.  Jumped.</dd>
-      <dt>There  are 1.2 apples</dt><dd>There are 1.2 apples</dd>
-    </dl>
+
+<dl id='tests'>
+  <dt>This is already a valid sentence.</dt><dd>This is already a valid sentence.</dd>
+  <dt>Extra  spaces</dt><dd>Extra spaces</dd>
+  <dt>Multiple  extra  spaces</dt><dd>Multiple extra spaces</dd>
+  <dt>Tab	here</dt><dd>Tab here</dd>
+  <dt>Multiple	tabs	here</dt><dd>Multiple tabs here</dd>
+  <dt>Tab	and  spaces</dt><dd>Tab and spaces</dd>
+  <dt>Multiple		tabs</dt><dd>Multiple tabs</dd>
+  <dt>Mixed 	 whitespace</dt><dd>Mixed whitespace</dd>
+  <dt>Sentence. Sentence.</dt><dd>Sentence.  Sentence.</dd>
+  <dt>Sentence with words.   Sentence.</dt><dd>Sentence with words.  Sentence.</dd>
+  <dt>The  quick brown fox. 	Jumped.</dt><dd>The quick brown fox.  Jumped.</dd>
+  <dt>There  are 1.2 apples</dt><dd>There are 1.2 apples</dd>
+</dl>
     <div id="congratulations">
         恭喜，你的正则通过了所有测试用例，记住要分享这个挑战哦。
     </div>
