@@ -14,9 +14,35 @@
   </header>
 
   <section>
-    <p>In the first challenge of 2013 after the holidays, you have to match valid regular expressions. This challenge will be in several parts - in the first, you only have to match literal characters, character classes, and a few other minor features, and in future weeks I will be adding more features until we can accurately match nearly every regular expression.</p>
-    <p>To see what regex features must be supported, it would probably be better to look at the test cases. The features that must be matched are literal characters, character classes, and the following operators: <code>.?+*</code>. The global and case insensitive operators should also be matched.</p>
-    <p>To test a regular expression on the test cases below, type it into the text input. Each test case will be marked as passed or failed respectively - you are aiming to get as many test cases as you can to pass. Note that JavaScript must be enabled for this feature to work. The regex engine used is the JavaScript regex engine; it is similar to PCRE, but with a few differences.</p>
+    <blockquote>
+      <p>
+        <span title="In the first challenge of 2013 after the holidays, you have to match valid regular expressions.">
+          在2013年假期结束后的第一个挑战，你必须匹配有效的正则表达式。
+        </span>
+        <span title="This challenge will be in several parts">
+          这个挑战分为几个部分
+        </span>
+        <span title="-">
+          -
+        </span>
+        <span title="in the first, you only have to match literal characters, character classes, and a few other minor features, and in future weeks I will be adding more features until we can accurately match nearly every regular expression.">
+          首先，你只需要匹配字符，字符类，和其他一些次要的特性，并在未来几周将添加更多的功能，直到我们可以准确地匹配几乎每一个正则表达式。
+        </span>
+      </p>
+      <p>
+        <span title="To see what regex features must be supported, it would probably be better to look at the test cases.">
+          看看必须支持的正则表达式功能，看测试用例可能更直观。
+        </span>
+        <span title="The features that must be matched are literal characters, character classes, and the following operators: '.?+*'.">
+          必须匹配的特征是元字符、字符类和下面的操作符：<code>.?+*</code>。
+        </span>
+        <span title="The global and case insensitive operators should also be matched.">
+          全局和区分大小写模式操作符也应匹配。
+        </span>
+      </p>
+    </blockquote>
+
+    <blockquote>在你输入正则之后，每个测试用例都会标注为是否通过，红色是未通过，绿色是通过，因为是基于 web 的，所以只能使用基于 JavaScript 传统型 NFA (Traditional NFA)正则引擎。它类似于PCRE，但有一些不同之处。</blockquote>
 
     <p class='single-input'>
       <textarea id="find" placeholder="/正则? 写这里../i"></textarea>
